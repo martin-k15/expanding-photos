@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    color: #fff;
+}
+
+.box{
+    display: flex;
+    width: 90vw;
+    gap: 0.3em;
+    justify-content: center;
+}
+ 
+.box__slide{
+    border-radius: 1em;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    padding: 1em;
+    flex: 1;
+    position: relative;
+    transition: flex 0.8s ease;
+}
+
+.box__text{
+    position: absolute;
+    bottom: 1em;
+}
+
+.box__slide h2, .box__slide p {
+    opacity: 0;
+}
+
+.box__slide h2{
+    margin: 0.5em 0;
+}
+
+
+.box__slide.box__slide--active h2, .box__slide.box__slide--active p{
+    opacity: 1;
+    transition: opacity 0.8s step-end;
+}
+
+.box__slide.box__slide--active{
+    flex-grow: 4;
+}
+
+.img1{
+    background-image: url("img/fire.webp");
+}
+ 
+.img2{
+    background-image: url("img/apple.webp");
+}
+
+.img3{
+    background-image: url("img/trees.webp");
+}
+
+.img4{
+    background-image: url("img/lego.webp");
+}
+
+.img5{
+    background-image: url("img/dog.webp");
+}
+
+
+@media screen and (max-width: 600px) {
+    .box{
+        flex-direction: column;
+        height: 90vh;
+    }
+
+}
